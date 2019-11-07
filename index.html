@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CS6101 - Deep Unsupervised Learning</title>
+	<meta name="keywords" content="CS6101, Deep Learning, Unsupervised Learning, NUS">
+	<meta name="description" content="This is a section of the CS 6101 Exploration of Computer Science Research at NUS. CS 6101 is a 4 modular credit pass/fail module for new incoming graduate programme students to obtain background in an area with an instructor's support. It is designed as a lab rotation to familiarize students with the methods and ways of research in a particular research area.  This semester's them will be on Deep Unsupervised Learning.">
+  <link rel="stylesheet" href="combo.css">
+  <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+</head>
+<body>
+  <div id="main">
+
+    <nav><ul>
+      
+        
+        <li class="p-intro"><a href="#intro">CS6101 – Deep Unsupervised Learning</a></li>
+      
+        
+        <li class="p-details"><a href="#details">Details</a></li>
+      
+        
+        <li class="p-schedule"><a href="#schedule">Schedule</a></li>
+      
+        
+        <li class="p-projects"><a href="#projects">Projects</a></li>
+      
+        
+        <li class="p-links"><a href="#links">Other Links</a></li>
+      
+    </ul></nav>
+
+
+    
+      
+      <div id="intro" class="section p-intro">
+        
+        <div class="container ">
+          <div>
+<img title="Photo by Sarah Lee on Unsplash" alt="Photo by Sarah Lee on Unsplash" src="img/hisarahlee.png" class="img-fluid" style="float:left" height="150" /><p style="text-align:center; float:right"><h1>Deep Unsupervised Learning</h1><p style="text-align:center">NUS SoC, <b>2019/2020</b>, Semester I<br />CS 6101 - Exploration of Computer Science Research<br />Thu 18:00-20:00 @ i3 #03-44 (STMI Executive Classroom)</p></p>
+</div>
+
+<p><br clear="both" />
+This course is taken almost verbatim from <a href="https://sites.google.com/view/berkeley-cs294-158-sp19/home">CS 294-158-SP19</a> – <a href="https://people.eecs.berkeley.edu/~pabbeel/">Pieter Abbeel</a>’s course at UC Berkeley. We are following his course’s formulation and selection of papers, with the permission of Pieter.</p>
+
+<p>This is a section of the CS 6101 Exploration of Computer Science Research at NUS. CS 6101 is a 4 modular credit pass/fail module for new incoming graduate programme students to obtain background in an area with an instructor’s support. It is designed as a “lab rotation” to familiarize students with the methods and ways of research in a particular research area.</p>
+
+<p>This course is also offered as a Do-it-Yourself Module (DYOM) for NUS undergraduates.  Please see the Slack group channel <code class="highlighter-rouge">#dyom</code> for details.</p>
+
+<p>Our section will be conducted as a group seminar, with class participants nominating themselves and presenting the materials and leading the discussion. It is not a lecture-oriented course and not as in-depth as Abbeel’s original course at UC Berkeley, and hence is not a replacement, but rather a class to spur local interest in Deep Unsupervised Learning.</p>
+
+<p>This course is offered in Session I (Weeks 3-7) and Session II (Weeks 8-13), although it is clear that the course is logically a single course that builds on the first half.  Nevertheless, the material should be introductory and should be understandable given some prior study.</p>
+
+<p><i class="fa fa-comments"></i>
+<a href="http://cs6101.slack.com/">A mandatory discussion group is on Slack</a>. Students and guests, please login when you are free. If you have a @comp.nus.edu.sg, @u.nus.edu, @nus.edu.sg, @a-star.edu.sg, @dsi.a-star.edu.sg or @i2r.a-star.edu.sg. email address you can create your Slack account for the group discussion without needing an invite.</p>
+
+<p><i class="fa fa-edit"></i>
+<strong>For interested public participants</strong>, please send Min an email at <code>kanmy@comp.nus.edu.sg</code> if you need an invite to the Slack group.  The Slack group is being reused from previous semesters.  Once you are in the Slack group, you can consider yourself registered for the course.</p>
+
+
+        </div>
+      </div>
+    
+      
+      <div id="details" class="section p-details">
+        
+        <div class="subtlecircle sectiondivider faicon">
+          <span class="fa-stack">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-check-square-o fa-stack-1x"></i>
+          </span>
+          <h5 class="icon-title">Details</h5>
+        </div>
+        
+        <div class="container ">
+          <h2>Registration FAQ</h2>
+
+<ul>
+  <li>
+    <p><strong>What topics are covered?</strong></p>
+
+    <p>Generative adversarial networks, variational autoencoders, autoregressive models, flow models, energy based models, compression, self-supervised learning, semi-supervised learning.</p>
+  </li>
+  <li>
+    <p><strong>What are the pre-requisites?</strong></p>
+
+    <p><em>From the original course</em>: significant experience with probability, optimization, deep learning</p>
+
+    <p><em>For our NUS course iteration</em>, <font style="color:red">we believe you should also follow the above pre-requisites, where possible.</font> As with many machine learning courses, it would be useful to have basic understanding of linear algebra, machine learning, and probability and statistics.  Taking online, open courses on these subjects concurrently or before the course is definitely advisable, if you do not have to requisite understanding.  You might try to follow the preflight video lectures, and if these are understandable to you, then you’re all good.</p>
+  </li>
+  <li>
+    <p><strong>Is the course chargeable?</strong> <strong>No,</strong> (see caveats for NUS undergraduate students) the course is not chargeable.  It is free (as in no-fee).  NUS allows us to teach this course for free, as it is not “taught”, <em>per se</em>.  Students in the class take charge of the lectures, and complete a project, while the teaching staff facilitates the experience.</p>
+  </li>
+  <li>
+    <p><strong>Can I get course credit for taking this?</strong> <strong>Yes,</strong> if you are a first-year School of Computing doctoral student.  In this case you need to formally enroll in the course as CS6101, And you will receive one half of the 4-MC pass/fail credit that you would receive for the course, which is a lab rotation course.  Even though the left rotation is only for half the semester, such students are encouraged and welcome to complete the entire course.</p>
+
+    <p><strong>Yes,</strong>  also for NUS undergraduate students (in any faculty).  You can enrol in this class through the Do-It-Yourself Module (Group initiated) for 4 MCs.  Undergraduate students must attend (physically or virtually) all 13 sessions of the course and complete the video lectures from Prof. Abbeel (in addition to the below requirements).  For undergraduate students, we believe that the class is counted towards your maximum workload and is chargeable as a regular module.</p>
+
+    <p><strong>No,</strong>  for everyone else.  By this we mean that no credits, certificate, or any other formal documentation for completing the course will be given to any other participants, inclusive of external registrants and NUS students (both internal and external to the School of Computing).  Such participants get the experience of learning deep learning together in a formal study group in developing the camaraderie and network from fellow peer students and the teaching staff.</p>
+  </li>
+  <li><strong>What are the requirements for completing the course?</strong> Each student must achieve 2 objectives  to be deemed to have completed the course:
+    <ul>
+      <li>Work with peers to assist in teaching two lecture sessions of the course: One lecture by co-lecturing the subject from new slides that you have prepared a team; and another lecture as a scribe: moderating the Slack channel to add materials for discussion and taking public class notes.  All lecture materials by co-lecturers and scribes will be made public.</li>
+      <li>Complete a deep unsupervised learning project. For the project, you only need to use any deep learning framework to execute a problem against a data set.  You may choose to replicate previous work from others in scientific papers or data science challenges. Or more challengingly, you may decide to use data from your own context.</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>How do external participants take this course?</strong> You may come to
+  NUS to participate in the lecture concurrently with all of our
+  local participants.  You are also welcome to participate online
+  through Google Hangouts.  We typically have a synchronous
+  broadcast to Google Hangouts that is streamed and archived to
+  YouTube.</p>
+
+    <p>During the session where you’re responsible for co-lecturing, you
+  will be expected to come to the class in person.</p>
+
+    <p>As an external participant, you <strong>are</strong> obligated to complete the
+  course to best your ability.  We do not encourage students who are
+  not committed to completing the course to enrol.</p>
+  </li>
+</ul>
+
+<h2>Meeting Venue and Time</h2>
+
+<p>For both Sessions (I and II): 18:00-20:00, Thursdays at the STMI Executive Classroom (i3 #0-44)</p>
+
+<p>For directions to NUS School of Computing (SoC) and i3: please read <a href="http://www.comp.nus.edu.sg/maps/getting-here/">the directions here</a>, to park in CP12B and/or take the bus to SoC. and use <a href="https://www.comp.nus.edu.sg/images/resources/content/mapsvenues/ICUBE_L3.jpg">the floorplan</a></p>
+
+<h2>People</h2>
+
+<p>Welcome. If you are an external visitor and would like to join us, please email Kan Min-Yen to be added to the class role. Guests from industry, schools and other far-reaching places in SG welcome, pending space and time logistic limitations. The more, the merrier.</p>
+
+<p>External guests will be listed here in due course once the course has started. Please refer to our Slack after you have been invited for the most up-to-date information.</p>
+
+<p><strong>NUS (Postgraduate, as CS6101)</strong>: Session I (Weeks 3-7): CAI Qingpeng, SONG Kai, ZHU Fengbin</p>
+
+<p><strong>NUS (Postgraduate, as CS6101)</strong>: Session II (Weeks 8-13): Dogukan Yigit POLAT, LIANG Yuxuan, Rishav CHOURASIA, WANG Wenjie, WANG Yiwei, WU Zhaomin, XU Cai</p>
+
+<p><strong>NUS (Undergraduates, as DYC1401)</strong>: 
+ANG Yi Zhe,
+Eloise LIM,
+Eugene LIM,
+Terence NEO,
+NEW Jun Jie,
+SHAO Yang</p>
+
+<p><strong><a href="http://wing.comp.nus.edu.sg">WING</a></strong>: 
+Ibrahim Taha AKSU, HU Hengchang,
+<a href="http://www.comp.nus.edu.sg/~kanmy/">Min-Yen Kan</a>
+</p>
+
+<p><strong>External Guests</strong>:
+ANG Shen Ting,
+Takanori AOKI,
+Martin KODYŠ,
+LEE Xin Jie,
+Joni NGO Thuy Hang,
+Tram Anh NGUYEN,
+Harsh SHRIVASTAVA,
+Chenglei SI,
+Pardha VISWANADHA,
+Sunil Kumar YADAV,
+David YAM</p>
+
+        </div>
+      </div>
+    
+      
+      <div id="schedule" class="section p-schedule">
+        
+        <div class="subtlecircle sectiondivider faicon">
+          <span class="fa-stack">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-calendar fa-stack-1x"></i>
+          </span>
+          <h5 class="icon-title">Schedule</h5>
+        </div>
+        
+        <div class="container ">
+          <style type="text/css">
+  td { padding:5px; }
+</style>
+
+<h2>Schedule</h2>
+
+<table class="table table-striped">
+<thead class="thead-inverse"><tr><th>Date</th><th width="60%">Description</th><th>Deadlines</th></tr></thead>
+<tbody>
+<tr>
+  <td><b>Week 1</b><br />15 Aug
+  </td>
+  <td>
+  <strong>
+Motivation / Likelihood-based Models Part I: Autoregressive Models
+  </strong>
+<br />
+  Lectured by: Min<br />
+  Scribed by: Ang Shen Ting, Sunil Kumar
+<br />
+  [&nbsp;«&nbsp;<a href="W1-notes.pdf">Scribe Notes (.pdf)</a>&nbsp;]
+  [&nbsp;«&nbsp;<a href="#" data-toggle="#div1">Recording&nbsp;@&nbsp;YouTube&nbsp;</a>&nbsp;]
+<div id="div1" style="display:none">
+  <iframe width="700" height="500" src="https://www.youtube.com/embed/i4Y5e9f2gcE" frameborder="0" allow="accelero\
+meter; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</div>
+  </td>
+  <td>
+  </td>
+</tr>
+<tr>
+  <td><b>Week 2</b><br />22 Aug
+  </td>
+  <td>
+  <strong>
+Likelihood-based Models: Autoregressive Models / Flow Models
+  </strong>
+<br />
+  Lectured by Ang Mingliang and Eugene Lim<br />
+  Scribed by: Shao Yang Hong, Kan Min-Yen, Joni Ngo,
+<br />
+  [&nbsp;«&nbsp;<a href="W2-notes.pdf">Scribe Notes (.pdf)</a>&nbsp;]
+  [&nbsp;«&nbsp;<a href="#" data-toggle="#div2">Recording&nbsp;@&nbsp;YouTube&nbsp;</a>&nbsp;]
+<div id="div2" style="display:none">
+  <iframe width="700" height="500" src="https://www.youtube.com/embed/_jm5tdV3CXs" frameborder="0" allow="accelero\
+meter; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</div>
+  </td>
+  <td>
+  </td>
+</tr>
+<tr>
+  <td><b>Week 3</b><br />29 Aug
+  </td>
+  <td><strong>
+Lossless Compression / Flow Models
+  </strong>
+<br />
+  Lectured by Daniel Pyone Maung, Terence Neo, Eloise Lim, Amit Prusty<br />
+  Scribed by: Eugene Lim, Ang Ming Liang, Ng Wen Xian
+<br />
+  [&nbsp;«&nbsp;<a href="W3-notes.pdf">Scribe Notes (.pdf)</a>&nbsp;]
+  [&nbsp;«&nbsp;<a href="#" data-toggle="#div3">Recording&nbsp;@&nbsp;YouTube&nbsp;</a>&nbsp;]
+<div id="div3" style="display:none">
+  <iframe width="700" height="500" src="https://www.youtube.com/embed/l9aX_tHJGek" frameborder="0" allow="accelero\
+meter; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</div>
+  </td>
+  <td>
+  </td>
+</tr>
+<tr>
+  <td><b>Week 4</b><br />5 Sep
+  </td>
+  <td>
+  <strong>
+Lecture 3a: Likelihood-based Models Part II: Flow Models (ctd) (same slides as week 2) /
+Lecture 3b: Latent Variable Models - part 1 
+  </strong>
+  <br />
+    Lectured by New Jun Jie, Eloise Lim, Shao Yang, Terence Neo.<br />
+    Scribed by: Taha Aksu, Shen Ting Ang, Song Kai, Daniel Maung
+  <br />
+    [&nbsp;«&nbsp;<a href="W4-notes.pdf">Scribe Notes (.pdf)</a>&nbsp;]
+    [&nbsp;«&nbsp;<a href="#" data-toggle="#div4">Recording&nbsp;@&nbsp;YouTube&nbsp;</a>&nbsp;]
+    <div id="div4" style="display:none">
+    <iframe width="700" height="500" src="https://www.youtube.com/embed/aQ1vplMQmVM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+    </div>
+</td>
+  <td>
+</td>
+</tr>
+<tr>
+  <td><b>Week 5</b><br />12 Sep
+  </td>
+  <td>
+  <strong>
+Lecture 4a: Latent Variable Models - part 2 /
+Lecture 4b: Bits-Back Coding
+  </strong>
+  <br />
+    Lectured by Song Kai, Hitoshi Iwasaki and David Yam<br />
+    Scribed by: Terence Neo, Eloise Lim, Xueqi, Rishav Chourasia
+  <br />
+    [&nbsp;«&nbsp;<a href="W5-notes.pdf">Scribe Notes (.pdf)</a>&nbsp;]
+    [&nbsp;«&nbsp;<a href="#" data-toggle="#div5">Recording&nbsp;@&nbsp;YouTube&nbsp;</a>&nbsp;]
+    <div id="div5" style="display:none">
+<iframe width="700" height="500" src="https://www.youtube.com/embed/a7ZH7o34DIM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+  </td>
+  <td>
+  </td>
+  </td>
+<tr>
+  <td><b>Week 6</b><br />19 Sep
+  </td>
+  <td>
+  <strong>
+Lecture 5a: Latent Variable Models - wrap-up (same slides as Latent Variable Models - part 2) /
+Lecture 5b: ANS coding (same slides as bits-back coding) / 
+Lecture 5c: Implicit Models / Generative Adversarial Networks
+  </strong>
+  <br />
+    Lectured by: Ang Shen Ting, Sunil Kumar Yadav, Takanori Aoki and Qingpeng Cai<br />
+    Scribed by: Amit Prusty, Harsh Shrivastava and Ang Yi Zhe
+  <br />
+    [&nbsp;«&nbsp;<a href="W6-notes.pdf">Scribe Notes (.pdf)</a>&nbsp;]
+    [&nbsp;«&nbsp;<a href="shenting-lvm.pdf">Additional Lecture Slides (Ang Shenting)</a>&nbsp;]
+    [&nbsp;«&nbsp;<a href="#" data-toggle="#div6">Recording&nbsp;@&nbsp;YouTube&nbsp;</a>&nbsp;]
+    <div id="div6" style="display:none">
+    <iframe width="700" height="500" src="https://www.youtube.com/embed/h3_zgyAK9LA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</td>
+<td>Preliminary project titles and team members due on Slack's <code>#projects</code></td>
+</td>
+<tr>
+  <td><b>Recess Week</b><br />26 Sep
+  </td>
+  <td>
+  <strong>
+Lecture 6a: Generative Adversarial Networks
+  </strong>
+  <br />
+    Lectured by: Takanori Aoki, Qingpeng Cai<br />
+    Scribed by: Kevin Ling
+  <br />
+    [&nbsp;<em>See consolidated scribe notes from Week 7</em>&nbsp;]
+    [&nbsp;«&nbsp;<a href="taka-gan.pdf">Additional Lecture Slides (Takanori Aoki)</a>&nbsp;]
+    [&nbsp;«&nbsp;<a href="#" data-toggle="#divr">Recording&nbsp;@&nbsp;YouTube&nbsp;</a>&nbsp;]
+    <div id="divr" style="display:none">
+    <iframe width="700" height="500" src="https://www.youtube.com/embed/yOFh8f9TOzM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+  </td>
+  <td>
+  </td>
+  </tr>
+<tr>
+  <td><b>Week 7</b><br />3 Oct
+  </td>
+  <td>
+  <strong>
+Lecture 6a: Generative Adversarial Networks (ctd)
+  </strong>
+  <br/>
+    Lectured by: Ang Yi Zhe, Wong Cheng Heng, Rishav Chourasia, Wu Zhaomin<br/>
+    Scribed by: Kevin Ling
+  <br/>
+    [&nbsp;«&nbsp;<a href="W7-notes.pdf">Scribe Notes (.pdf)</a>&nbsp;]
+    [&nbsp;«&nbsp;<a href="yizhe-gan.pdf">Additional Lecture Slides (Ang Yi Zhe)</a>&nbsp;]
+    [&nbsp;«&nbsp;<a href="#" data-toggle="#div7">Recording&nbsp;@&nbsp;YouTube&nbsp;</a>&nbsp;]
+    <div id="div7" style="display:none">
+    <iframe width="700" height="500" src="https://www.youtube.com/embed/O48hulpu52k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+  </td>
+  <td>Preliminary abstracts due to <code>#projects</code>
+  </td>
+  </tr>
+<tr>
+  <td><b>Week 8</b><br />10 Oct
+  </td>
+  <td>
+  <strong>
+Lecture 7: Non-Generative Representation Learning (same slides as 6b)
+  </strong>
+  <br/>
+    Lectured by: Zhaomin Wu, Tram Anh Nguyen, Pardha Viswanadha, Liling Tan<br/>
+    Scribed by: Fengbin Zhu, Yizhuo Zhou, Hengchang Hu
+  <br/>
+    [&nbsp;«&nbsp;<a href="W8-notes.pdf">Scribe Notes (.pdf)</a>&nbsp;]
+    [&nbsp;«&nbsp;<a href="pardha-poggio.pdf">Additional Lecture Slides (Tomaso Poggio via Pardha Viswanadha)</a>&nbsp;]
+    [&nbsp;«&nbsp;<a href="#" data-toggle="#div8">Recording&nbsp;@&nbsp;YouTube&nbsp;</a>&nbsp;]
+    <div id="div8" style="display:none">
+    <iframe width="700" height="500" src="https://www.youtube.com/embed/OWle4aqt2dg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+  </td>
+  <td>
+  </td>
+</tr>
+<tr>
+  <td><b>Week 9</b><br />17 Oct
+  </td>
+  <td>
+  <strong>
+Lecture 8a: Strengths/Weaknesses of Unsupervised Learning Methods Covered Thus Far /
+Lecture 8b: Semi-Supervised Learning /
+Lecture 8c: Guest Lecture by Ilya Sutskever
+  </strong>
+  <br/>
+    Lectured by: Joni Ngo, Eloise Lim, Xueqi Li, Fengbin Zhu, Eugene Lim<br/>
+    Scribed by: David Yam, Tram Anh Nguyen, Liling Tan, Yuxuan Liang 
+  <br/>
+    [&nbsp;«&nbsp;<a href="W9-notes.pdf">Scribe Notes (.pdf)</a>&nbsp;]
+    [&nbsp;«&nbsp;<a href="eugene-semisupervised.pdf">Additional Lecture Slides (Eugene Lim)</a>&nbsp;]
+    [&nbsp;«&nbsp;<a href="#" data-toggle="#div9">Recording&nbsp;@&nbsp;YouTube&nbsp;</a>&nbsp;]
+    <div id="div9" style="display:none">
+    <iframe width="700" height="500" src="https://www.youtube.com/embed/FmDS_-fBDmQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+  </td>
+  <td>
+  </td>
+</tr>
+<tr>
+  <td><b>Week 10</b><br />24 Oct
+  </td>
+  <td>
+    <strong>
+Lecture 9a: Unsupervised Distribution Alignment /
+Lecture 9b: Guest Lecture by Alyosha Efros
+    </strong>
+  <br/>
+    Lectured by: Hengchang Hu, New Jun Jie, Shao Yang
+    Scribed by: Takanori Aoki, Liu Ziyang, Wong Cheng Heng
+  <br/>
+    [&nbsp;«&nbsp;<a href="W10-notes.pdf">Scribe Notes (.pdf)</a>&nbsp;]
+    [&nbsp;«&nbsp;<a href="#" data-toggle="#div10">Recording&nbsp;@&nbsp;YouTube&nbsp;</a>&nbsp;]
+    <div id="div10" style="display:none">
+    <iframe width="700" height="500" src="https://www.youtube.com/embed/PGQU4VHEhCo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</td>
+  <td>
+  </td>
+</tr>
+<tr>
+  <td><b>Week 11</b><br />31 Oct
+  </td>
+  <td>
+<strong>
+<em>No lecture due to the <a href="https://wing.comp.nus.edu.sg/~ssnlp/">Singapore Symposium on Natural Language Processing</a> (SSNLP '19).</em>
+  </strong>
+</td>
+  <td>
+  </td>
+</tr>
+<tr>
+  <td><b>Week 12</b><br />7 Nov
+  </td>
+  <td>
+  <strong>
+Lecture 10: Language Models (Alec Radford)
+  </strong>
+  <br/>
+    Lectured by: Lee Xin Jie, Si Chenglei, Li Xueqi, Liu Ziyang, Wang Wenjie<br/>
+    Scribed by: Hitoshi Iwasaki, Wu Zhaomin
+  <br/>
+    [&nbsp;«&nbsp;<a href="W12-notes.pdf">Scribe Notes (.pdf)</a>&nbsp;]
+    [&nbsp;«&nbsp;<a href="chenglei-lm.pdf">Additional Lecture Slides (Si Chenglei and Wang Wenjie)</a>&nbsp;]
+    [&nbsp;«&nbsp;<a href="#" data-toggle="#div11">Recording&nbsp;@&nbsp;YouTube&nbsp;</a>&nbsp;]
+    <div id="div11" style="display:none">
+    <iframe width="700" height="500" src="https://www.youtube.com/embed/JTGLW8vAfyU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+  </td>
+  <td>
+  </td>
+</tr>
+<tr>
+  <td><b>Week 13</b><br />14 Nov
+  </td>
+  <td>
+  <strong>
+Lecture 11: Representation Learning in Reinforcement Learning
+  </strong>
+  </td>
+  <td>Participation on evening of 15th STePS
+  </td>
+</tr>
+</div></td></tr></div></td></tr></div></td></tr></div></td></tr></tbody></table>
+
+        </div>
+      </div>
+    
+      
+      <div id="projects" class="section p-projects">
+        
+        <div class="subtlecircle sectiondivider faicon">
+          <span class="fa-stack">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-bar-chart fa-stack-1x"></i>
+          </span>
+          <h5 class="icon-title">Projects</h5>
+        </div>
+        
+        <div class="container ">
+          <h2>Student Projects</h2>
+
+<p>Stay tuned!</p>
+
+        </div>
+      </div>
+    
+      
+      <div id="links" class="section p-links">
+        
+        <div class="subtlecircle sectiondivider faicon">
+          <span class="fa-stack">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-plug fa-stack-1x"></i>
+          </span>
+          <h5 class="icon-title">Other Links</h5>
+        </div>
+        
+        <div class="container ">
+          <p>General Texts:</p>
+
+<ul>
+  <li><strong>Ian Goodfellow, Yoshua Bengio and Aaron Courville <em>Deep Learning</em></strong> - an MIT Press book <a href="http://www.deeplearningbook.org/">http://www.deeplearningbook.org/</a></li>
+  <li><strong>Michael A. Nielsen, <em>Neural Networks and Deep Learning</em></strong> - free, general e-book - <a href="http://neuralnetworksanddeeplearning.com/">http://neuralnetworksanddeeplearning.com/</a></li>
+</ul>
+
+<p>Previous CS6101 versions run by Min:</p>
+
+<ul>
+  <li><strong>Deep Reinforcement Learning</strong> - <a href="http://www.comp.nus.edu.sg/~kanmy/courses/6101_1820/">http://www.comp.nus.edu.sg/~kanmy/courses/6101_1820</a></li>
+  <li><strong>Deep Learning for NLP</strong> (reprise) - <a href="http://www.comp.nus.edu.sg/~kanmy/courses/6101_1810/">http://www.comp.nus.edu.sg/~kanmy/courses/6101_1810</a></li>
+  <li><strong>Deep Learning via Fast.AI</strong> - <a href="http://www.comp.nus.edu.sg/~kanmy/courses/6101_2017_2/">http://www.comp.nus.edu.sg/~kanmy/courses/6101_2017_2/</a></li>
+  <li><strong>Deep Learning for Vision</strong> - <a href="http://www.comp.nus.edu.sg/~kanmy/courses/6101_2017/">http://www.comp.nus.edu.sg/~kanmy/courses/6101_2017/</a></li>
+  <li><strong>Deep Learning for NLP</strong> - <a href="http://www.comp.nus.edu.sg/~kanmy/courses/6101_2016_2/">http://www.comp.nus.edu.sg/~kanmy/courses/6101_2016_2/</a></li>
+  <li><strong>MOOC Research</strong> - <a href="http://www.comp.nus.edu.sg/~kanmy/courses/6101_2016/">http://www.comp.nus.edu.sg/~kanmy/courses/6101_2016/</a></li>
+</ul>
+
+        </div>
+      </div>
+    
+
+
+    <div id="footer" class="section text-white">
+      <div class="container">
+        
+        <p>Design forked from 
+<a href="https://github.com/t413/SinglePaged">SinglePaged theme</a>
+by Tim O’Brien <a href="http://t413.com/">t413.com</a></p>
+
+
+      </div>
+    </div>
+  </div>
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-9594235-3']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="site.js"></script>
+</html>
